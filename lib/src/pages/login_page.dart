@@ -73,7 +73,9 @@ class LoginPage extends StatelessWidget {
                 ),
                 hintText: 'ejemplo@correo.com',
                 labelText: 'Correo Electronico',
-                counterText: snapshot.data),
+                counterText: snapshot.data,
+                 errorText:snapshot.hasError ? snapshot.error.toString() : null 
+                 ),
             onChanged: bloc.changeEmail,
           ),
         );
@@ -95,8 +97,9 @@ class LoginPage extends StatelessWidget {
                 color: Colors.blueAccent,
               ),
               labelText: 'Contraseña',
-              counterText: snapshot.data, //esto despues quitar para que no se vea la contra
-             // errorText:q
+             // counterText: snapshot.data, //esto despues quitar para que no se vea la contra
+            //  errorText: snapshot.error.toString()
+                errorText: snapshot.hasError ? snapshot.error.toString() : null
             ),
             onChanged: bloc.changePassword , //esto igual 
           ),
