@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 30.0),
             _password(bloc),
             SizedBox(height: 30.0),
-            _crearBoton()
+            _crearBoton(bloc)
           ]),
         ),
         Text('¿Olvidaste tu contraseña?'),
@@ -74,8 +74,8 @@ class LoginPage extends StatelessWidget {
                 hintText: 'ejemplo@correo.com',
                 labelText: 'Correo Electronico',
                 counterText: snapshot.data,
-                 errorText:snapshot.hasError ? snapshot.error.toString() : null 
-                 ),
+                errorText:
+                    snapshot.hasError ? snapshot.error.toString() : null),
             onChanged: bloc.changeEmail,
           ),
         );
@@ -92,29 +92,34 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-              icon: Icon(
-                Icons.lock_outline,
-                color: Colors.blueAccent,
-              ),
-              labelText: 'Contraseña',
-             // counterText: snapshot.data, //esto despues quitar para que no se vea la contra
-            //  errorText: snapshot.error.toString()
-                errorText: snapshot.hasError ? snapshot.error.toString() : null
-            ),
-            onChanged: bloc.changePassword , //esto igual 
+                icon: Icon(
+                  Icons.lock_outline,
+                  color: Colors.blueAccent,
+                ),
+                labelText: 'Contraseña',
+                // counterText: snapshot.data, //esto despues quitar para que no se vea la contra
+                //  errorText: snapshot.error.toString()
+                errorText:
+                    snapshot.hasError ? snapshot.error.toString() : null),
+            onChanged: bloc.changePassword, //esto igual
           ),
         );
       },
     );
   }
 
-  Widget _crearBoton() {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
-        child: Text('Ingresar'),
-      ),
+  Widget _crearBoton(LoginBloc bloc) {
+    return StreamBuilder(
+      stream: bloc.formValidStream,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        return ElevatedButton(
+          onPressed:snapshot.hasData ?(){}:null ,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
+            child: Text('Ingresar'),
+          ),
+        );
+      },
     );
   }
 
