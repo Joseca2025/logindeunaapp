@@ -110,14 +110,18 @@ class LoginPage extends StatelessWidget {
 
   Widget _crearBoton(LoginBloc bloc) {
     return StreamBuilder(
-      stream: bloc.formValidStream,
+     stream: bloc.formValidStream, //esto lo comente por el error del observable
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return ElevatedButton(
-          onPressed:snapshot.hasData ?(){}:null ,
+          //onPressed:snapshot.hasData ?(){}:null,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
             child: Text('Ingresar'),
           ),
+          //aqui lo que hice con el navigatior fue pasar del login al home poniendo el 
+          //nombre de la ruta que esta en main 
+          onPressed:snapshot.hasData ?()=>Navigator.pushNamed(context,'HomePage'):null,
+        //pushReplacementNamed este es el bueno pero por el momento usare el otrs
         );
       },
     );

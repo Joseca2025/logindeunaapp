@@ -1,0 +1,1 @@
+export 'package:logindeunaapp/services/preventivo_service.dart';

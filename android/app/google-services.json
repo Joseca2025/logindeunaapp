@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "244977703770",
+    "project_id": "sistemaautomotriz-bb92f",
+    "storage_bucket": "sistemaautomotriz-bb92f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244977703770:android:332dc9324d3f42042af163",
+        "android_client_info": {
+          "package_name": "com.example.logindeunaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244977703770-60rfpkltlojq6tjb7vv3sp6av3l981iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7Tp-1y7Y5SsS-KLdEDfdbhiPz11pve34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "244977703770-60rfpkltlojq6tjb7vv3sp6av3l981iv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

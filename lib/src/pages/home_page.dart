@@ -7,6 +7,15 @@ class homePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('PAGINA DE INCIO'),
       ),
+      body: Container(),
+      floatingActionButton: _buttonpreventivo(context),
+    );
+  }
+
+  _buttonpreventivo(BuildContext context) {
+    return FloatingActionButton(
+      child: Icon(Icons.build_circle_outlined),
+      onPressed: () => Navigator.pushNamed(context, 'MantenimentoPreventivo'),
     );
   }
 }
